@@ -1,3 +1,8 @@
+"""
+@authors Adam Stanford-Moore and Hristo Stoyanov
+@date June 7, 2019
+Stanford Universtiy CS230 Final Project
+"""
 import math
 import argparse
 import numpy as np
@@ -73,26 +78,26 @@ def load_set(folderPath,datasets,MAX_NUM,train_percent=80,dev_percent=10, augmen
 def load_data(folderPath):
     datasets = np.array([[None,None],[None,None],[None,None]]) #train x,y ; dev x,y ; test x,y   
 
-    load_set(folderPath + '/output_train/',datasets,MAX_NUM=1500,train_percent=80,dev_percent=10)
-    print(datasets[0][0].shape,datasets[0][1].shape)
-    print("Done with loading training data", len(datasets[0][1]))
+    #load_set(folderPath + '/output_train/',datasets,MAX_NUM=1500,train_percent=80,dev_percent=10)
+    #print(datasets[0][0].shape,datasets[0][1].shape)
+    #print("Done with loading training data", len(datasets[0][1]))
     
-    load_set(folderPath + '/output_test/',datasets,MAX_NUM=20000,train_percent=80,dev_percent=10)
+    #load_set(folderPath + '/output_test/',datasets,MAX_NUM=20000,train_percent=80,dev_percent=10)
     #print(datasets[1][0].shape,datasets[1][1].shape)
-    print("Done with loading testing data", len(datasets[1][1]))
-    
-    load_set('/home/ubuntu/hristo-data/all',datasets,MAX_NUM = 100000,train_percent=80,dev_percent=10,augment_arr = True)
+    #print("Done with loading testing data", len(datasets[1][1]))
+
+    load_set('data/',datasets,MAX_NUM = 100000,train_percent=80,dev_percent=10,augment_arr = True)
     #print(datasets[2][0].shape,datasets[2][1].shape)
     print("Done with loading custom data", len(datasets[2][1]))
-    
-    load_set('/home/ubuntu/adam_sorted/',datasets,MAX_NUM = 100000,train_percent=80,dev_percent=10,augment_arr = True)
-    print(datasets[2][0].shape,datasets[2][1].shape)
-    print("Done with loading custom data", len(datasets[2][1]))
 
-    load_set('/home/ubuntu/last_data_sorted_nice/',datasets,MAX_NUM = 100000,train_percent=80,dev_percent=10,augment_arr = True)
-    print(datasets[2][0].shape,datasets[2][1].shape)
-    print("Done with loading custom data", len(datasets[2][1]))
-    
+    #load_set('/home/ubuntu/adam_sorted/',datasets,MAX_NUM = 100000,train_percent=80,dev_percent=10,augment_arr = True)
+    #print(datasets[2][0].shape,datasets[2][1].shape)
+    #print("Done with loading custom data", len(datasets[2][1]))
+
+    #load_set('/home/ubuntu/last_data_sorted_nice/',datasets,MAX_NUM = 100000,train_percent=80,dev_percent=10,augment_arr = True)
+    #print(datasets[2][0].shape,datasets[2][1].shape)
+    #print("Done with loading custom data", len(datasets[2][1]))
+
     return (datasets[0][0],datasets[0][1]),(datasets[1][0],datasets[1][1]),(datasets[2][0],datasets[2][1])
 
 def augment(x_train, y_train):
